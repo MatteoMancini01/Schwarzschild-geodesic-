@@ -45,7 +45,7 @@ for i in index_name:
             symbol = ch.tensor()[index_name[i], index_name[j], index_name[k]]
             indices = [i,j,k]
             
-            if symbol != 0 and symbol not in christoffel_dict.values():
+            if symbol != 0:
                 # Add symbol to dictionary
                 christoffel_dict[str(indices)] = symbol
                 print(indices, '=', symbol)
