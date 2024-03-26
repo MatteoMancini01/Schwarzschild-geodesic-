@@ -93,7 +93,7 @@ plt.plot(phi_values, r_value, label = 'RK-4', color = 'blue' )
 
 plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
 
-plt.title('Numerical')
+plt.title('Numerical solution')
 plt.ylabel('r')
 plt.xlabel(r'$\phi$')
 
