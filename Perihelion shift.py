@@ -57,7 +57,7 @@ E = 0.92999 # total energy #set to 0.92999
 #starting values
 phi0 = 0 # initial value for tau
 r0 = 4.673*rs # initial value for r. set it to r0 = 4.673*rs
-
+#r0 = 5*rs # change radius to 5rs to see a smaller shift
 
 # now we are going to define f(y,t) our ODE
 
