@@ -162,7 +162,6 @@ E = V(3) + 0.01 # total energy #set to V(3) + 0.01
 phi0 = 0 # initial value for tau
 r0 = 2.93397443*rs # initial value for r. set it to r0 = 2.93397443*rs
 
-
 # now we are going to define f(y,t) our ODE
 
 def f(phi, r):
@@ -205,43 +204,38 @@ for i in range(0, Nsteps):
     r_old = r_now
     
 
-plt.plot(phi_values, r_value, label = 'RK-4', color = 'blue' )
+plt.plot(phi_values, r_value, label = 'RK-4', color = 'black' )
 
 plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+plt.title('Numerical solution')
+plt.ylabel('r')
+plt.xlabel(r'$\phi$')
 
-plt.title('Numerical')
+#%%
+phi_negative = []
+
+for i in phi_values:
+    phi_negative.append(-i)
+phi_value = phi_negative + phi_values
+
+rvalue = r_value + r_value
+
+plt.plot(phi_value, rvalue, color = 'black', label = 'RK4')
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+plt.title('Numerical solution')
 plt.ylabel('r')
 plt.xlabel(r'$\phi$')
 
 
 #%%
-
-xs = []
-ys = []
-
-for i in range(len(r_value)):
-    x = r_value[i]*np.cos(phi_values[i])
-    y = r_value[i]*np.sin(phi_values[i])
-    xs.append(x)
-    ys.append(y)
-
-xs0 = []
-ys0 = []
-for j in range(len(r_value)):
-    x0 = r_value[j]*np.cos(phi_values[j])
-    y0 = - r_value[j]*np.sin(phi_values[j])
-    xs0.append(x0)
-    ys0.append(y0)
-
-xs1 = xs0 + xs
-ys1 = ys0 + ys
-
-rs = 1
+# convering to cartesian
+x = rvalue*np.cos(phi_value)
+y = rvalue*np.sin(phi_value)
 
 circle = plt.Circle((0, 0), rs, color='black', alpha=0.5, label = r'Singularity of radius $R_s$')
 
 # Plot the trajectory in the xy-plane
-plt.plot(xs1, ys1, label = 'Gravitational deflection', color = 'orange')
+plt.plot(x, y, label = 'Gravitational deflection', color = 'orange')
 
 
 plt.axhline(0, color='black',linewidth=0.5)
