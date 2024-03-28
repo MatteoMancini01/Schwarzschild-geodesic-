@@ -26,18 +26,19 @@ V_unstable = (c**2 + (J_tilda/r_unstable)**2)*(1-rs/r_unstable)
 print(r_stable, V_stable)
 print(r_unstable, V_unstable)
 
-plt.axhline(y=0.9299, color='black', label = r' $\tilde{E}^2 \approx 0.93$', linestyle = 'dashed')
+plt.axhline(y=0.9299, color='black', label = r' $\tilde{E}^2_0 \approx 0.93$', linestyle = 'dashed')
+plt.axhline(y=0.984, color='black', label = r' $\tilde{E}^2_1 = 0.984$', linestyle = 'dashdot')
 
 plt.scatter(4.673*rs, 0.9299, color = 'purple', label = 'Perihelion shift')
 plt.scatter(8.102362416407951*rs, 0.9299, color = 'purple')
-
+plt.scatter(2.5*rs, 0.984, color = 'green', label = 'Gravitetional deflection')
 plt.plot(r, Veff, color = 'black')
 plt.scatter(r_stable, V_stable, color = 'blue', label = 'Stable circular orbit')
 plt.scatter(r_unstable, V_unstable, color = 'red', label = 'Ustable circular orbit')
 plt.title(r'Effective potential for particle with mass, $R_s = 1$')
 plt.ylabel(r'$\tilde{V}^2_{eff}$')
 plt.ylim(0.92,1.005)
-plt.legend(loc='upper right', bbox_to_anchor=(1.45, 1))
+plt.legend(loc='upper right', bbox_to_anchor=(1.5, 1))
 plt.xlabel('r')
 
 #%%
