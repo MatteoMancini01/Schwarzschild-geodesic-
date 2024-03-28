@@ -22,18 +22,18 @@ J = 2
 def V(r):
     return (c**2 + (J/r)**2)*(1-rs/r)
 #%%
-V(3.5)
+print(V(2.5))
 
 #%%
 
 c = 1 # set speed of light in a vacuum equal to one
 rs = 1 # schwarzchild radius 
 J = 2 # angular momentum
-E = V(3.5) + 0.01 # total energy #set to V(3) + 0.01
+E = V(2.5) + 0.01 # total energy #set to V(3) + 0.01
 
 #starting values
 phi0 = 0 # initial value for tau
-r0 = 3.159*rs # initial value for r. set it to r0 = 2.93397443*rs
+r0 = 2.4*rs # initial value for r. set it to r0 = 2.93397443*rs
 
 # now we are going to define f(y,t) our ODE
 
@@ -102,7 +102,6 @@ plt.xlabel(r'$\phi$')
 
 #%%
 # convering to cartesian
-# convering to cartesian
 x = rvalue*np.cos(phi_value)
 y = rvalue*np.sin(phi_value)
 
@@ -127,16 +126,17 @@ textbox_content += "• $R_s = 1$ (Schwarzschild radius)\n"
 textbox_content += "• $r \u2248 3.2 R_s$ (radial distance initial value)\n"
 textbox_content += "• $\phi = 0$ (azimuthal angle initial value)\n"
 
-plt.text(22, -12, textbox_content, bbox=dict(facecolor='white', alpha=0.5))
+plt.text(35, -30, textbox_content, bbox=dict(facecolor='white', alpha=0.5))
 
-d = 20
-
-plt.xlim(-d,d)
-plt.ylim(-d,d)
+d = 30
+b = 50
+plt.xlim(-b,d)
+plt.ylim(-b,b)
 
 plt.ylabel(r'$\frac{y}{R_s}$')
 plt.xlabel(r'$\frac{x}{R_s}$')
 plt.title('Gravitational deflection of mass particles')
-plt.legend(loc='upper right', bbox_to_anchor=(1.8, 1))
+plt.legend(loc='upper right', bbox_to_anchor=(2, 1))
 plt.show()
+
 
