@@ -102,6 +102,7 @@ plt.xlabel(r'$\phi$')
 
 #%%
 # convering to cartesian
+# convering to cartesian
 x = rvalue*np.cos(phi_value)
 y = rvalue*np.sin(phi_value)
 
@@ -120,13 +121,13 @@ plt.gcf().gca().add_artist(circle)
 # Adding a text box with bullet points
 textbox_content = "Paramete values:\n"
 textbox_content += "• c = 1 (speed of light)\n"
-textbox_content += "• $J = 2$ (angular momentum)\n"
-textbox_content += "• $E^2 \u2248 0.95 $ (total energy)\n"
+textbox_content += "• $\~{J} = 2$ (angular momentum)\n"
+textbox_content += "• $\~{E}^2 \u2248 0.95 $ (total energy)\n"
 textbox_content += "• $R_s = 1$ (Schwarzschild radius)\n"
 textbox_content += "• $r \u2248 3.2 R_s$ (radial distance initial value)\n"
 textbox_content += "• $\phi = 0$ (azimuthal angle initial value)\n"
 
-plt.text(22, -10, textbox_content, bbox=dict(facecolor='white', alpha=0.5))
+plt.text(22, -12, textbox_content, bbox=dict(facecolor='white', alpha=0.5))
 
 d = 20
 
@@ -135,6 +136,7 @@ plt.ylim(-d,d)
 
 plt.ylabel(r'$\frac{y}{R_s}$')
 plt.xlabel(r'$\frac{x}{R_s}$')
-plt.title('Gravitational deflection of light')
+plt.title('Gravitational deflection of mass particles')
 plt.legend(loc='upper right', bbox_to_anchor=(1.8, 1))
 plt.show()
+
